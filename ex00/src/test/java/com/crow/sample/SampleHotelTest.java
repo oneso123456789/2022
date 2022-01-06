@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import jdk.internal.org.jline.utils.Log;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
@@ -26,7 +25,7 @@ public class SampleHotelTest {
     @Test
     public void TestEx1(){
         
-        assertNotNull(hotel);
+        assertNotNull(hotel); 
         log.info(hotel);
         log.info(hotel.getChef());
         
