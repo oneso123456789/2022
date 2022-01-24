@@ -12,4 +12,6 @@ public class TodoDTO {
     
     @DateTimeFormat(pattern = "yyyy/MM/dd")
     private Date dueDate;
+    
+    private Date toDate;
 }
