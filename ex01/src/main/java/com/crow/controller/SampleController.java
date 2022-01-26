@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.crow.domain.SampleDTO;
 import com.crow.domain.SampleDTOList;
@@ -25,6 +26,11 @@ import lombok.extern.log4j.Log4j;
 @RequestMapping("/sample/*")
 @Log4j
 public class SampleController {
+    
+    public void FormatTest(){
+        SimpleDateFormat testDateFormat = new SimpleDateFormat();
+        testDateFormat.getTimeInstance();
+    }
 
     @InitBinder
     public void initBinder(WebDataBinder binder) {
@@ -96,6 +102,22 @@ public class SampleController {
         log.info("page: " + page);
 
         return "/sample/ex04";
+    }
+
+    @GetMapping("/ex05")
+    public void ex05() {
+        log.info("/ex05..........");
+    }
+    
+    @GetMapping("/ex06")
+    public @ResponseBody SampleDTO ex06() {
+        log.info("ex06......");
+        SampleDTO dto = new SampleDTO();
+        dto.setAge(26);
+        dto.setName("Crow");
+        
+        return dto;
+        
     }
 
 }

@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html" charset=UTF-8>
-<title>Insert title here</title>
+<title>EX04페이지임</title>
 </head>
 <body>
 <h2>SAMPLEDTO ${sampleDTO }</h2>
 <h2>PAGE ${page }</h2>
+<h2>아오옳</h2>
 </body>
 </html>
