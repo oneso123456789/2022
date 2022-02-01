@@ -1,6 +1,6 @@
 package com.crow.controller;
 
-import java.net.http.HttpHeaders;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -148,6 +148,7 @@ public class SampleController {
            log.info("-------------------------------");
            log.info("name:" + file.getOriginalFilename());
            log.info("size:" + file.getSize());
+           log.info("type:" + file.getContentType());
           
        });
    }
