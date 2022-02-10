@@ -18,6 +18,10 @@ import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
 @RunWith(SpringJUnit4ClassRunner.class)
+/*
+ * @ContextConfiguration(
+ * "file:src\\main\\webapp\\WEB-INF\\spring\\root-context.xml")
+ */
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
 @Log4j
 public class DataSourceTests {
@@ -29,19 +33,20 @@ public class DataSourceTests {
     private SqlSessionFactory sqlSessionFactory;
 
     @Test
-    public void testConnetion() {
-        // TODO Auto-generated method stub
+    public void testConnection() {
+
         try (Connection con = dataSource.getConnection()) {
             log.info(con);
-
         } catch (Exception e) {
             // TODO: handle exception
             fail(e.getMessage());
         }
-    }
 
+    }
+    
     @Test
     public void testMyBatis() {
+
         try (SqlSession session = sqlSessionFactory.openSession(); Connection con = session.getConnection();) {
             log.info(session);
             log.info(con);
@@ -50,5 +55,6 @@ public class DataSourceTests {
             // TODO: handle exception
             fail(e.getMessage());
         }
+
     }
 }
